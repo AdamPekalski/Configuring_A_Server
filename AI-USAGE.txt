@@ -1,0 +1,3 @@
+- helping interpret errors during testing
+
+- clarifying assingment requirements
