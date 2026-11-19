@@ -1,0 +1,17 @@
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    enp0s1:
+      dhcp4: true
+      dhcp6: true
+      match:
+        macaddress: 4a:d1:81:f7:55:3c
+      set-name: enp0s1
+    enp0s2:
+      accept-ra: true
+      dhcp4: false
+      dhcp6: false
+      addresses:
+        - 192.168.1.1/24
+
+  version: 2
