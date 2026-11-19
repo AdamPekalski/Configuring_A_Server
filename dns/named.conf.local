@@ -1,0 +1,13 @@
+//
+// Do any local configuration here
+//
+zone "student75872.lan" {
+    type master;
+    file "/etc/bind/db.student75872.lan";
+};
+
+
+zone "1.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.192.168.1";
+};
