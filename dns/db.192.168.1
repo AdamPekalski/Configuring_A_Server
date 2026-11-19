@@ -1,15 +1,18 @@
+; Reverse DNS zone for the 192.168.1.0/24 internal network.
 $TTL 86400
 
 @   IN  SOA ns.student75872.lan. admin.student75872.lan. (
-        2026111901
-        3600
-        1800
-        604800
-        86400
+        2026111901 ; Serial number
+        3600       ; Refresh: 1 hour
+        1800       ; Retry: 30 minutes
+        604800     ; Expire: 7 days
+        86400      ; Negative cache TTL: 24 hours
 )
 
+; Authoritative nameserver.
 @       IN  NS      ns.student75872.lan.
 
+; PTR records map IP addresses back to hostnames.
 1       IN  PTR     server.student75872.lan.
 10      IN  PTR     test1.student75872.lan.
 20      IN  PTR     test2.student75872.lan.

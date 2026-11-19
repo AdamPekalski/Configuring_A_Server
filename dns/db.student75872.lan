@@ -1,16 +1,24 @@
+; 24-hour TTL keeps DNS traffic low while remaining suitable
+; for this small and stable internal network.
 $TTL 86400
 
+; Start of Authority for student75872.lan.
 @   IN  SOA ns.student75872.lan. admin.student75872.lan. (
-        2026111901
-        3600
-        1800
-        604800
-        86400
+        2026111901 ; Serial number
+        3600       ; Refresh: 1 hour
+        1800       ; Retry: 30 minutes
+        604800     ; Expire: 7 days
+        86400      ; Negative cache TTL: 24 hours
 )
 
+; Authoritative nameserver for this domain.
 @       IN  NS      ns.student75872.lan.
 
+; IPv4 address records.
+; The DNS server uses the server's internal static address.
 ns      IN  A       192.168.1.1
 server  IN  A       192.168.1.1
+
+; Test hosts used to demonstrate forward and reverse DNS records.
 test1   IN  A       192.168.1.10
 test2   IN  A       192.168.1.20
